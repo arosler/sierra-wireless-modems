@@ -216,7 +216,7 @@ function get_modem_bootloader_deviceid() {
     while [ -z $deviceid ]
     do
         echo 'Waiting for modem in boothold mode...'
-        sleep 2
+        sleep 0.1
         deviceid=$(lsusb | grep -i -E '1199:9070|1199:9078|413C:81B5' | awk '{print $6}')
     done
     echo "Found $deviceid"
